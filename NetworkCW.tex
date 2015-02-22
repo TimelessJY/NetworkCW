@@ -1,0 +1,80 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[affil-it]{authblk}
+\usepackage[english]{babel}
+\usepackage{booktabs} 
+\usepackage{verbatim} 
+\usepackage[margin=1.0in]{geometry}
+
+\title{\Huge Networks and Communications}
+\author{Jinyi Shan} 
+
+\begin{document}
+\maketitle
+
+
+\section{DNS and HTTP protocol}
+
+\subsection*{(a)}
+TCP is a reliable, connection-oriented protocol, while UDP is an unreliable, connectionless protocol. Using TCP will lead to high overhead for setting up connections, but the transmission is usually guaranteed; while using UDP can generaly get an answer quickly, but data might be lost during the communication. \\
+\\
+DNS maps a given host name to an IP address and wants to receive the answer quickly, the high costs of setting up and tearing down the connections will be wasteful in this case. In case that the massage is lost, or the reply messages don't arrive in order, DNS uses an identifier to link queries and replies.
+\\ \\
+Nowadays, HTTP usually uses persistent connections with TCP, which means the same connection can be used for multiple requests and replies. As HTTP is usually used for continuous communications involving a sequence of requests and replies, it's worth to setup a connection for them. Also, ordering and reliability are always required for this communication, so TCP is a better choice for HTTP.
+
+\subsection*{(b)}
+First an UDP query packet is sent to DNS, which maps the given host name to the IP address of the corresponding server and returns it to the client.  \\ \\
+Then the client uses HTTP protocol to set up a connection to the server. Using this connection, four TCP requests for the text and the three pictures are sent to the server, and the replies from the server containing the contents requested are sent through the same connection back to the client, which in this case, is the web browser.
+
+\subsection*{(c)}
+
+\section{SMTP protocol}
+
+\subsection*{(a)}
+
+\subsection*{(b)}
+
+\subsection*{(c)}
+
+\section{Reliable transfer protocols}
+
+\subsection*{(a)}
+
+\subsection*{(b)}
+
+\section{TCP’s congestion control}
+
+\subsection*{(a)}
+\begin{table}[ht]
+\caption{ }
+\centering
+\begin{tabular}{c c c c c}
+\hline\hline
+Time (s) & Phase (SS or CA) & CWND (\#segments) & CWND threshold & Segments to transmit \\ [0.5ex] % inserts table %heading
+\hline
+1 & 50 &  837& 970 \\  [1ex]
+2 & 47 &  877& 230 \\ [1ex]
+3 & 31 &   25 & 415 \\  [1ex]
+4 & 35 & 144 & 2356 \\  [1ex]
+5 & 45 & 300 & 556 \\  [1ex]
+\hline
+\end{tabular}
+\label{table:nonlin}
+\end{table}
+
+\subsection*{(b)}
+
+\section{TCP performance}
+
+\subsection*{(a)}
+
+\subsection*{(b)}
+
+\subsection*{(c)}
+
+
+
+More text.
+
+\end{document}
+
+
